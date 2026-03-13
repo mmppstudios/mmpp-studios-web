@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMPP STUDIOS | High-Quality Unreal Engine Systems</title>
+    <meta name="description" content="MMPP Studios specializing in production-ready Unreal Engine systems and multiplayer gameplay tools. Clean, modular, and well-documented assets for developers.">
+    <meta name="keywords" content="Unreal Engine, UE5, Multiplayer Systems, Gameplay Tools, C++, Blueprints, MMPP Studios">
+    <meta name="author" content="MMPP Studios">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="MMPP STUDIOS">
+    <meta property="og:description" content="Advanced Unreal Engine systems for modern developers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mmppstudios.com">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace; /* Technikaibb font */
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            min-height: 1.2em;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 3em;
+            color: #cccccc; /* Kicsit halványabb a jobb olvashatóságért */
+        }
+
+        /* A kurzorok stílusa */
+        .cursor {
+            display: inline-block;
+            background-color: white;
+            animation: blink 1s infinite;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .cursor-l { width: 12px; height: 40px; }
+        .cursor-s { width: 8px; height: 18px; }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1><span id="header"></span><span id="cursor-h" class="cursor cursor-l"></span></h1>
+    <p><span id="description"></span><span id="cursor-d" class="cursor cursor-s" style="display:none;"></span></p>
+
+    <script>
+        const headerText = "MMPP STUDIOS";
+        const descText = "MMPP Studios is an independent developer specializing in high-quality Unreal Engine systems and gameplay tools. We provide clean, modular, and production-ready assets designed to streamline the development of complex multiplayer mechanics. Our mission is to empower developers with well-documented solutions that are easy to integrate and scale.";
+
+        function typeWriter(text, elementId, speed, cursorId, callback) {
+            let i = 0;
+            const element = document.getElementById(elementId);
+            const cursor = document.getElementById(cursorId);
+
+            // Megjelenítjük az aktuális kurzort
+            if(cursor) cursor.style.display = "inline-block";
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else if (callback) {
+                    callback();
+                }
+            }
+            type();
+        }
+
+        // Indítás: Cím lassú (100ms), Leírás gyors (15ms)
+        window.onload = () => {
+            typeWriter(headerText, "header", 100, "cursor-h", () => {
+                typeWriter(descText, "description", 5, "cursor-d");
+            });
+        };
+    </script>
+</body>
+</html>
