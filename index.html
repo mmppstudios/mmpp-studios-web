@@ -47,6 +47,7 @@
             min-height: 1.2em;
         }
 
+        /* Színosztályok, amiket a kártyánál is használunk */
         .color-mm { color: #FF5D9CFF; }
         .color-pp { color: #005A6CFF; }
         .color-studios { color: #FF9800FF; }
@@ -122,13 +123,11 @@
         }
 
         .product-card h3 {
-            color: white;
             font-size: 20px;
             margin: 0 0 10px 0;
         }
 
         .product-card p.card-desc {
-            color: #999;
             font-size: 14px;
             margin: 0 0 20px 0;
             line-height: 1.4;
@@ -136,15 +135,10 @@
         }
 
         .product-card .card-link {
-            color: #fff;
             font-size: 14px;
             font-weight: bold;
             display: block;
             margin-top: auto;
-        }
-
-        .product-card .card-link::before {
-            content: "> ";
         }
 
         .social-wrapper {
@@ -183,11 +177,14 @@
 
         <!-- assets section -->
         <div class="products-wrapper" id="products">
-            <a href="#" class="product-card">
+            <a href="https://www.fab.com/listings/ad74ca85-c908-4507-a93d-adddc25f8a59" class="product-card">
                 <img src="assets/AMTF_FAB_Main.png" alt="Multiplayer Grenade & Throwable System – AI & Trajectory (AMTF)">
-                <h3>Multiplayer Grenade & Throwable System – AI & Trajectory (AMTF)</h3>
-                <p class="card-desc">Add a high-performance, production-ready ballistic simulation system to your Unreal Engine project in minutes.</p>
-                <span class="card-link">View Product @Fab</span>
+                <!-- Cím: Rózsaszín -->
+                <h3 class="color-mm">Multiplayer Grenade & Throwable System – AI & Trajectory (AMTF)</h3>
+                <!-- Leírás: Kék -->
+                <p class="card-desc color-pp">Add a high-performance, production-ready ballistic simulation system to your Unreal Engine project in minutes.</p>
+                <!-- Link: Sárga/Narancs -->
+                <span class="card-link color-studios">&gt; View Product @Fab</span>
             </a>
         </div>
     </div>
